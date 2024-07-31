@@ -1,6 +1,6 @@
 # Markdown Extension Examples
 
-This page demonstrates some of the built-in markdown extensions provided by VitePress.
+JS基础-他乡之石，可以攻玉
 
 ## Syntax Highlighting
 
