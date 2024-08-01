@@ -8,12 +8,13 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: 18.x
+          cache: npm
 
       - name: Install dependencies
         run: npm install
@@ -30,4 +31,3 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}
           source: docs/.vitepress/dist/*
           target: /data/frontend-kb/
-          strip_components: 1
