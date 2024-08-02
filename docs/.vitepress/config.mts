@@ -10,15 +10,35 @@ export default defineConfig({
       { text: '主页', link: '/' },
       { text: '博客', link: 'https://www.jianfengke.com' }
     ],
-
     sidebar: [
       {
-        text: 'Examples',
+        text: 'JS基础',
         items: [
-          { text: '开始学习', link: '/javascript-base' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: '原型及原型链', link: '/js/prototype' },
         ]
-      }
+      },
+      {
+        text: 'CSS基础',
+        items: [
+          { text: 'BFC', link: '/css/bfc' },
+        ]
+      },
+      {
+        text: 'React',
+        items: [
+          { text: 'react渲染流程', link: '/js/prototype' },
+        ]
+      },
+      {
+        text: '工程化',
+        items: [
+          { text: 'husky', link: '/js/prototype' },
+        ]
+      },
+
+
+
+
     ],
 
     socialLinks: [
