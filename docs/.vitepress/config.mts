@@ -20,7 +20,7 @@ export default defineConfig({
       {
         text: 'CSS基础',
         items: [
-          { text: 'BFC', link: '/css/bfc' },
+          { text: 'BFC', link: '/css/BFC' },
         ]
       },
       {
