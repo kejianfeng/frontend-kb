@@ -4,8 +4,10 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Jamki 前端沉淀知识库",
   description: "前端工程师,前端自学,高级前端工程师,中高级前端工程师,前端进阶知识,前端职业发展, react面试,react源码，工程化，前端安全，前端面试， 剑指前端 Offer",
+  head: [
+    ['link', { rel: 'icon', href: 'https://www.jianfengke.com/favicon.ico' }],
+  ],
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '主页', link: '/' },
       { text: '博客', link: 'https://www.jianfengke.com' }
@@ -45,8 +47,5 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/kejianfeng' }
     ]
   },
-  head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }]
-  ]
   // base: '/frontend-kb/'
 })
