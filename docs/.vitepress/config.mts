@@ -17,29 +17,34 @@ export default defineConfig({
         text: 'JS基础',
         items: [
           { text: '原型及原型链', link: '/js/prototype' },
-        ]
+        ],
+        collapsed: true
       },
       {
         text: 'CSS基础',
         items: [
           { text: 'BFC', link: '/css/BFC' },
-        ]
+          { text: 'CSS属性选择器', link: '/css/selector' },
+          { text: '盒模型', link: '/css/box-model' },
+          { text: '隐藏元素的方法', link: '/css/visible' },
+          { text: 'CSS常见列布局', link: '/css/column-layout' },
+        ],
+        collapsed: true
       },
       {
         text: 'React',
         items: [
           { text: 'react渲染流程', link: '/js/prototype' },
-        ]
+        ],
+        collapsed: true
       },
       {
         text: '工程化',
         items: [
-          { text: 'husky', link: '/js/prototype' },
-        ]
+          { text: 'husky', link: '/engineering/prototype' },
+        ],
+        collapsed: true
       },
-
-
-
 
     ],
 

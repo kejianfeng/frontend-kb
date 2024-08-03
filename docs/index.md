@@ -20,7 +20,7 @@ features:
     link: /js
   - title: CSS基础
     details: 学习CSS布局、样式和响应式设计以及一些容易忽略的知识点。
-    link: /css
+    link: /css/BFC
   - title: React
     details: 熟悉React框架，了解底层原理，助力构建完整的React体系知识框架。
     link: /react
