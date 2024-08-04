@@ -41,7 +41,7 @@ export default defineConfig({
       {
         text: '工程化',
         items: [
-          { text: 'husky', link: '/engineering/prototype' },
+          { text: 'CommonJs常见疑点', link: '/engineering/commomjs' },
         ],
         collapsed: true
       },
