@@ -26,13 +26,13 @@ features:
     link: /react
   - title: 工程化
     details: 了解前端工程化流程与组成部分，提升开发效率和代码质量。
-    link: /engineered
+    link: /engineering/commomjs
   - title: 浏览器与网络
     details: 理解浏览器工作原理和网络协议，优化页面加载。
     link: /network
   - title: Node.js
     details: 使用Node.js进行服务器端JavaScript编程。
-    link: /nodejs
+    link: /nodejs/path-action
   - title: 前端安全
     details: 学习前端安全知识，防范常见的网络攻击。
     link: /safe

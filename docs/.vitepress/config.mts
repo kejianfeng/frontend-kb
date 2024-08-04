@@ -39,6 +39,13 @@ export default defineConfig({
         collapsed: true
       },
       {
+        text: 'NodeJs',
+        items: [
+          { text: '搞不懂path.join的path.resolve的区别就来看看这个', link: '/nodejs/path-action' },
+        ],
+        collapsed: true
+      },
+      {
         text: '工程化',
         items: [
           { text: 'CommonJs常见疑点', link: '/engineering/commomjs' },
