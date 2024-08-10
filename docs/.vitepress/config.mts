@@ -17,6 +17,8 @@ export default defineConfig({
         text: 'JS基础',
         items: [
           { text: '原型及原型链', link: '/js/prototype' },
+          { text: 'PromiseA+规范', link: '/js/promise_A+' },
+          { text: '自己实现一个Promise', link: '/js/promise' },
         ],
         collapsed: true
       },
@@ -49,6 +51,13 @@ export default defineConfig({
         text: '工程化',
         items: [
           { text: 'CommonJs常见疑点', link: '/engineering/commomjs' },
+        ],
+        collapsed: true
+      },
+      {
+        text: 'Typescript',
+        items: [
+          { text: 'Typescript常用的内置工具方法', link: '/typescript/utils-type' },
         ],
         collapsed: true
       },

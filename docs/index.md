@@ -38,7 +38,7 @@ features:
     link: /safe
   - title: Typescript
     details: 利用TypeScript增强JavaScript的类型安全性。
-    link: /typescript
+    link: /typescript/utils-type
   - title: 算法
     details: 掌握基本算法和数据结构，提高编程解决问题的能力。
     link: /algorithm
