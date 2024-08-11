@@ -47,7 +47,7 @@ promise.then(onFulfilled, onRejected) <br />
 2.2.6.2. 如果promise被拒绝，所有相应的onRejected回调必须按照他们原始调用then的顺序执行 <br />
 2.2.7. then必须返回一个promise [3.3] <br />
 promise2 = promise1.then(onFulfilled,onRejected) <br />
-2.2.7.1. 如果onFulfilled或onRjected返回一个值x，运行promise解决程序[[Resolve]](promise2,x) <br />
+2.2.7.1. 如果onFulfilled或onRjected返回一个值x，运行promise解决程序`[[Resolve]](promise2,x)`<br />
 2.2.7.2. 如果onFulfilled或onRejected抛出一个异常e，promise2必须用e作为原因被拒绝 <br />
 2.2.7.3. 如果onFulfilled不是一个函数并且promise1被解决，promise2必须用与promise1相同的值被解决 <br />
 2.2.7.4. 如果onRejected不是一个函数并且promise1被拒绝，promise2必须用与promise1相同的原因被拒绝 <br />
@@ -68,7 +68,7 @@ promise解决程序是一个抽象操作，它以一个promise和一个值作为
 2.3.3.1. 让then成为x.then。[3.5] <br />
 2.3.3.2. 如果检索属性x.then导致抛出了一个异常e，用e作为原因拒绝promise <br />
 2.3.3.3. 如果then是一个函数，用x作为this调用它。then方法的参数为俩个回调函数，第一个参数叫做resolvePromise，第二个参数叫做rejectPromise：<br />
-2.3.3.3.1. 如果resolvePromise用一个值y调用，运行[[Resolve]](promise, y)。译者注：这里再次调用[[Resolve]](promise,y)，因为y可能还是promise <br />
+2.3.3.3.1. 如果resolvePromise用一个值y调用，运行[[Resolve]](promise, y)。译者注：这里再次调用`[[Resolve]](promise,y)`，因为y可能还是promise 
 2.3.3.3.2. 如果rejectPromise用一个原因r调用，用r拒绝promise。译者注：这里如果r为promise的话，依旧会直接reject，拒绝的原因就是promise。并不会等到promise被解决或拒绝 <br />
 2.3.3.3.3. 如果resolvePromise和rejectPromise都被调用，或者对同一个参数进行多次调用，那么第一次调用优先，以后的调用都会被忽略。译者注：这里主要针对thenable，promise的状态一旦更改就不会再改变。 <br />
 2.3.3.3.4. 如果调用then抛出了一个异常e, <br />
