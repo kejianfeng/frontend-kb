@@ -7,7 +7,7 @@ ES6额外加了几个APi， 例如Promise.all、 Promsie.race、 Promise.any等�
 ### Promise这个类里面有哪些属性或者方法
 看下Promsie的宏观结构
 
-```
+```javascript
 const PENDING = 'pending'; 
 const FULFILLED = 'fulfilled';
 const REJECTED = 'rejected';
@@ -85,7 +85,7 @@ Promises/A+ 规范指出 onFulfilled 和 onRejected 并不是 promise 解决或�
 这里采用宏任务 setTimeout 来实现：
 
 大体框架是这样：
-```
+```javascript
 then(onFulfilled, onRejected) {
     if (this.state === FULFILLED) {  // 执行函数为同步且执行了 resolve
       typeof onFulfilled === 'function' && setTimeout(() => {
@@ -112,7 +112,7 @@ then(onFulfilled, onRejected) {
 如是rejected状态，而且onRejected是函数，则调用onRejected(reason)
 
 这就容易解释了假如我先定一下Promise,调用执行代码
-```
+```javascript
 const promise1 = new Promise((resolve, reject) => {
   setTimeout(() => {
       resolve('111111')
@@ -124,7 +124,7 @@ const promise1 = new Promise((resolve, reject) => {
 
 
 无论过了多久，你调用
-```
+```javascript
 const result = promise1.then(value =>  {
     console.log(value)
 })
@@ -135,7 +135,7 @@ const result = promise1.then(value =>  {
 ### 但万一多个then连续执行，而且这个Promise状态还是pending,那咋整
 
 例如：
-```
+```javascript
 const promise1 = new Promise((resolve, reject) => {
   setTimeout(() => {
       resolve('111111')
@@ -163,56 +163,6 @@ onRejectedCallbacks处理的方案同onFulfilledCallbacks一样，只是传递�
 大概逻辑可以看下一下图片：
 ![](https://image.jianfengke.com/20220421010145.png)
 
-
-
-
-
-
-## 实现Promise.race
-
-整体流程与 Promise 差不多，只是对数组中的 Promise 实例处理的逻辑不一样，这里我们需要将最快改变状态的 Promise 结果作为 Promise.race 的结果，相对来说就比较简单了，代码如下：
-
-首先我们得知道 Promise.resolve('foo')  等价于  new Promise(resolve => resolve('foo'))
-
-
-```
-Promise.MyRace = function (promises) {
-  return new Promise((resolve, reject) => {
-    // 这里不需要使用索引，只要能循环出每一项就行
-    for (const item of promises) {
-      //为啥要这么写呢，因为resolve调用一次后，状态就变为完成，这样后面就算调了也没用，因为状态都改了不给你执行了
-      // 同时也是防止item它本身不是promise, 所以要把他变成一个promise
-      Promise.resolve(item).then(resolve, reject) //等价于
-      <!-- new Promise(_resolve => {
-        _resolve(item)
-      }).then(resolve, reject) -->
-    }
-  })
-}
-```
-
-## 实现Promise.all
-all实际上是一个很简单的东西， 存在两种情况：
-有报错的话立马reject返回报错
-否则要等全部状态都转变完成了才 返回一个list
-但记住Promise.allf返回的也是一个promise,所以该API功能肯定得包裹在一个Promise实例里面
-
-```
-Promise.MyAll = function (promises) {
-  let arr = [],
-  count = 0
-  return new Promise((resolve, reject) => {
-    promises.forEach((item, i) => {
-      Promise.resolve(item).then(res => {
-        arr[i] = res
-        count += 1
-        if (count === promises.length) resolve(arr)
-      }).catch(reject)
-    })
-  })
-}
-
-```
 
 ## 完整实现
 
@@ -355,6 +305,57 @@ class FullPromise {
   };
 };
 ```
+
+
+
+## 实现Promise.race
+
+整体流程与 Promise 差不多，只是对数组中的 Promise 实例处理的逻辑不一样，这里我们需要将最快改变状态的 Promise 结果作为 Promise.race 的结果，相对来说就比较简单了，代码如下：
+
+首先我们得知道 Promise.resolve('foo')  等价于  new Promise(resolve => resolve('foo'))
+
+
+```javascript
+Promise.MyRace = function (promises) {
+  return new Promise((resolve, reject) => {
+    // 这里不需要使用索引，只要能循环出每一项就行
+    for (const item of promises) {
+      //为啥要这么写呢，因为resolve调用一次后，状态就变为完成，这样后面就算调了也没用，
+      // 因为状态都改了不给你执行了
+      // 同时也是防止item它本身不是promise, 所以要把他变成一个promise
+      Promise.resolve(item).then(resolve, reject) //等价于
+      <!-- new Promise(_resolve => {
+        _resolve(item)
+      }).then(resolve, reject) -->
+    }
+  })
+}
+```
+
+## 实现Promise.all
+all实际上是一个很简单的东西， 存在两种情况：
+有报错的话立马reject返回报错
+否则要等全部状态都转变完成了才 返回一个list
+但记住Promise.allf返回的也是一个promise,所以该API功能肯定得包裹在一个Promise实例里面
+
+```javascript
+Promise.MyAll = function (promises) {
+  let arr = [],
+  count = 0
+  return new Promise((resolve, reject) => {
+    promises.forEach((item, i) => {
+      Promise.resolve(item).then(res => {
+        arr[i] = res
+        count += 1
+        if (count === promises.length) resolve(arr)
+      }).catch(reject)
+    })
+  })
+}
+
+```
+
+
 
 
 
