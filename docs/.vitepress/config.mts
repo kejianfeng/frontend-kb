@@ -36,7 +36,7 @@ export default defineConfig({
       {
         text: 'React',
         items: [
-          { text: 'react渲染流程', link: '/js/prototype' },
+          { text: 'react渲染流程', link: '/react/render-process'},
         ],
         collapsed: true
       },
@@ -44,6 +44,7 @@ export default defineConfig({
         text: 'NodeJs',
         items: [
           { text: '搞不懂path.join的path.resolve的区别就来看看这个', link: '/nodejs/path-action' },
+          { text: 'cluster-集群', link: '/nodejs/cluster' },
         ],
         collapsed: true
       },
@@ -58,6 +59,14 @@ export default defineConfig({
         text: 'Typescript',
         items: [
           { text: 'Typescript常用的内置工具方法', link: '/typescript/utils-type' },
+        ],
+        collapsed: true
+      },
+      {
+        text: '浏览器与网络',
+        items: [
+          { text: '浏览器资源缓存策略-强缓存与协商缓存', link: '/network/cache-strategy' },
+          { text: '浏览器应用层缓存简介', link: '/network/applicatiob-cache' },
         ],
         collapsed: true
       },

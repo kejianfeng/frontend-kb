@@ -29,7 +29,7 @@ features:
     link: /engineering/commomjs
   - title: 浏览器与网络
     details: 理解浏览器工作原理和网络协议，优化页面加载。
-    link: /network
+    link: /network/cache-strategy
   - title: Node.js
     details: 使用Node.js进行服务器端JavaScript编程。
     link: /nodejs/path-action
