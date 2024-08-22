@@ -12,7 +12,7 @@ hero:
       link: /js
     - theme: alt
       text: 技术拓展
-      link: /sumary
+      link: /tech-expand/share-site
 
 features:
   - title: JS基础
@@ -32,7 +32,7 @@ features:
     link: /network/cache-strategy
   - title: Node.js
     details: 使用Node.js进行服务器端JavaScript编程。
-    link: /nodejs/path-action
+    link: /nodejs/koa-compose
   - title: 前端安全
     details: 学习前端安全知识，防范常见的网络攻击。
     link: /safe

@@ -44,6 +44,7 @@ export default defineConfig({
         text: 'NodeJs',
         items: [
           { text: '搞不懂path.join的path.resolve的区别就来看看这个', link: '/nodejs/path-action' },
+          { text: 'Koa启动流程及其洋葱模型源码分析', link: '/nodejs/koa-compose' },
           { text: 'cluster-集群', link: '/nodejs/cluster' },
         ],
         collapsed: true
