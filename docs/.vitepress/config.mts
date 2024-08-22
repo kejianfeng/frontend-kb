@@ -36,7 +36,7 @@ export default defineConfig({
       {
         text: 'React',
         items: [
-          { text: 'react渲染流程', link: '/react/render-process'},
+          { text: 'React事件合成', link: '/react/synthetic-event'},
         ],
         collapsed: true
       },

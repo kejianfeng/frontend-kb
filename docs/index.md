@@ -17,13 +17,13 @@ hero:
 features:
   - title: JS基础
     details: 前端之根本，掌握JavaScript语言基础，理解变量、函数等核心概念。
-    link: /js
+    link: /js/prototype
   - title: CSS基础
     details: 学习CSS布局、样式和响应式设计以及一些容易忽略的知识点。
     link: /css/BFC
   - title: React
     details: 熟悉React框架，了解底层原理，助力构建完整的React体系知识框架。
-    link: /react
+    link: /react/synthetic-event
   - title: 工程化
     details: 了解前端工程化流程与组成部分，提升开发效率和代码质量。
     link: /engineering/commomjs
