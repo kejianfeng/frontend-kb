@@ -68,6 +68,7 @@ export default defineConfig({
         items: [
           { text: '浏览器资源缓存策略-强缓存与协商缓存', link: '/network/cache-strategy' },
           { text: '浏览器应用层缓存简介', link: '/network/applicatiob-cache' },
+          { text: '浏览器渲染流程', link: '/network/browser-render' },
         ],
         collapsed: true
       },
