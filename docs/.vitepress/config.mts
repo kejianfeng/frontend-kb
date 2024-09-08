@@ -53,6 +53,7 @@ export default defineConfig({
         text: '工程化',
         items: [
           { text: 'CommonJs常见疑点', link: '/engineering/commomjs' },
+          { text: '热更新原理', link: '/engineering/hmr' },
         ],
         collapsed: true
       },
