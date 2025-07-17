@@ -6,6 +6,15 @@ export default defineConfig({
   description: "前端工程师,前端自学,高级前端工程师,中高级前端工程师,前端进阶知识,前端职业发展, react面试,react源码，工程化，前端安全，前端面试， 剑指前端 Offer",
   head: [
     ['link', { rel: 'icon', href: 'https://www.jianfengke.com/favicon.ico' }],
+    ['meta', { property: 'og:title', content: 'Jamki知识库沉淀' }],
+    ['meta', { property: 'og:description', content: '勤学如春起之苗，不见其增日有所长' }],
+    ['meta', { property: 'og:image', content: 'https://images.vrm.cn/jx/2020/05/18/me_1.jpg' }],
+    ['meta', { property: 'og:url', content: 'https://frontend-kb.jianfengke.com/' }],
+    ['meta', { property: 'weixin:card', content: 'Jamki知识库沉淀' }],
+    ['meta', { property: 'weixin:url', content: 'https://frontend-kb.jianfengke.com' }],
+    ['meta', { property: 'weixin:title', content: 'Jamki知识库沉淀' }],
+    ['meta', { property: 'weixin:description', content: '勤学如春起之苗，不见其增日有所长' }],
+    ['meta', { property: 'weixin:image', content: 'https://images.vrm.cn/jx/2020/05/18/me_1.jpg' }],
     [
       'script',
       { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-WHWWJES8WC' }
@@ -17,7 +26,7 @@ export default defineConfig({
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-WHWWJES8WC');`
-    ]
+    ],
   ],
   themeConfig: {
     nav: [
